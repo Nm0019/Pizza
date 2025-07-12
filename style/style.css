@@ -1,0 +1,193 @@
+@font-face {
+    font-family: 'vazir';
+    src: url(../fonts/vazir-font-v16.1.0/Vazir.eot);
+    src: url(../fonts/vazir-font-v16.1.0/Vazir.ttf);
+    src: url(../fonts/vazir-font-v16.1.0/Vazir.woff);
+}
+@font-face {
+    font-family: 'yekan';
+    src: url(../fonts/B_Yekan/Yekan.ttf);
+}
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    list-style: none;
+}
+body{
+    direction: rtl;
+    font-family: "vazir";
+    background: #2f2f2f
+}
+
+.container{
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 20px;
+    padding-right: 20px;
+    max-width: 1220px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+
+header {
+    display: flex;
+    align-content: center;
+    width: 100%;
+    height: 30vh;
+    color: #999;
+    background-color: #1F1F1F;
+}
+
+header .navbar{
+    width: 100%;
+    height: 20vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header .navbar .social{
+    display: flex;
+    width: 25%;
+    padding: 40px 0;
+    
+}
+header .navbar .social ul{
+    display: flex;
+    align-items: center;
+    width: 80%;
+    height: 60px;
+    justify-content: space-between;
+    flex-direction: column;
+    padding-top: 10px;
+    
+}
+header .navbar .social ul li{
+    width: 100%;
+    height: 50%;
+    text-align: center;
+    
+}
+header .navbar .social ul li a{
+    color: #999;
+    font-size: 10px;
+    display: grid;
+    justify-items: center;
+    width: 100%;
+    text-decoration-line: none;
+}
+header .navbar .social ul li a:hover{
+    background-color: tan;
+    border-radius: 10px 20px;
+    transition: all .3s ease-in-out;
+}
+header .navbar .social img{
+    width: 10%;
+    margin-left: 2px;
+}
+header .navbar .menu{
+    display: flex;
+    align-items: center;
+    width:40%;
+    padding-top: 50px;
+}
+header .navbar .menu ul{
+    display: flex;
+    align-items: center;
+    width: 100%;
+    justify-content: space-between;
+}
+header .navbar .menu ul li{
+    width: 25%;
+    text-align: center;
+    
+}
+header .navbar .menu ul li a{
+    color: #999;
+    font-size: 15px;
+    display: grid;
+    justify-items: center;
+    width: 100%;
+    text-decoration-line: none;
+}
+header .navbar .menu ul li a:hover{
+    background-color: tan;
+    border-radius: 10px 20px;
+    transition: all .3s ease-in-out;
+}
+header .navbar .menu ul li a img{
+    width: 100%;
+    height: 30px;
+    margin-top: 20px;
+}
+header .navbar .ads{
+    justify-content: flex-start;
+    width: 21%;
+    padding: 87px 0 0 0;
+    align-items: center;
+    display: inline-flex
+;
+}
+
+header .navbar .ads img{
+    height: auto;
+    max-width: 100%;
+}
+
+.below-header-col1 {
+    float: left;
+    width: 21%;
+}
+
+.toggle-cat-wrap {
+    width: 248px;
+    box-sizing: border-box;
+    padding: 0 12px;
+    background: #f99500;;
+    color: #fff;
+    border-radius: 4px;
+    font-size: 15px;
+    height: 49px;
+    line-height: 49px;
+}
+.cat-toggle{
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    align-content: center;
+}
+.toggle-title{
+    flex: 12;
+    margin-left: 5px;
+}
+
+.product-cat-list thunk-product-cat-list{
+    background: #1F1F1F;
+    border-color: #1F1F1F;
+    color: #999;
+    width: 100%;
+    float: left;
+    border: 1px solid #f1f1f1;
+    border-top: 0;
+    background: #fff;
+    border-radius: 5px;
+    position: relative;
+}
+.thunk-product-cat-list li {
+    list-style: none;
+    display: block;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    float: left;
+}
+.cat-item{
+    border-bottom-color: #111;
+    background: #1F1F1F;
+    border-color: #1F1F1F;
+    color: #999;
+}
+    
