@@ -473,6 +473,7 @@
 
 
 
+    
     <script>
   const slides = document.querySelectorAll(".slider-item .item");
   let index = 0;
@@ -532,75 +533,61 @@ function openFriedModal(type) {
 
     </script>
 <script>
-  // باز کردن مدال‌ها با کلیک روی آیتم منو
-  document.querySelectorAll('.menu-item').forEach(item => {
-    item.addEventListener('click', function (e) {
-      e.preventDefault();
-      const type = this.getAttribute('data-menu');
-      const modal = document.getElementById(`menu_${type}Modal`);
-      if (modal) {
-        modal.classList.add('show');
-        document.body.style.overflow = 'hidden'; // جلوگیری از اسکرول پس‌زمینه
-      }
-    });
-  });
-
-  // بستن مدال با کلیک روی ضربدر
-  document.querySelectorAll('.close-modal').forEach(closeBtn => {
-    closeBtn.addEventListener('click', function () {
-      const modal = this.closest('.menu-modal');
-      if (modal) {
-        modal.classList.remove('show');
-        document.body.style.overflow = 'auto'; // بازگرداندن اسکرول
-      }
-    });
-  });
-</script>
-<script>
   let currentModal = null;
 
-  // باز کردن modal
-  document.querySelectorAll('.menu-item').forEach(item => {
-    item.addEventListener('click', function (e) {
-      e.preventDefault();
-      const type = this.getAttribute('data-menu');
-      const modal = document.getElementById(`menu_${type}Modal`);
-      if (modal) {
-        modal.classList.add('show');
-        document.body.style.overflow = 'hidden';
-        currentModal = modal;
+  // تابع باز کردن مدال
+  function openModal(modalId) {
+    const modal = document.getElementById(modalId);
+    if (modal) {
+      modal.classList.add('show');
+      document.body.style.overflow = 'hidden';
+      currentModal = modal;
 
-        // اضافه کردن وضعیت جدید به history
+      // فقط اگر modal قبلاً باز نشده
+      if (!history.state || !history.state.modalOpen) {
         history.pushState({ modalOpen: true }, '');
       }
-    });
-  });
-
-  // بستن modal با ضربدر
-  document.querySelectorAll('.close-modal').forEach(btn => {
-    btn.addEventListener('click', () => {
-      closeCurrentModal();
-    });
-  });
+    }
+  }
 
   // تابع بستن مدال
-  function closeCurrentModal() {
-    if (currentModal) {
-      currentModal.classList.remove('show');
+  function closeModal(modalId = null) {
+    const modal = modalId ? document.getElementById(modalId) : currentModal;
+    if (modal) {
+      modal.classList.remove('show');
       document.body.style.overflow = 'auto';
       currentModal = null;
 
-      // بازگشت به عقب در history فقط اگر modal باز شده باشد
+      // اگر state فعال بود، از history خارج شود
       if (history.state && history.state.modalOpen) {
         history.back();
       }
     }
   }
 
-  // واکنش به دکمه برگشت موبایل
-  window.addEventListener('popstate', function () {
+  // کلیک روی menu-item
+  document.querySelectorAll('.menu-item').forEach(item => {
+    item.addEventListener('click', function (e) {
+      e.preventDefault();
+      const type = this.getAttribute('data-menu');
+      openModal(`menu_${type}Modal`);
+    });
+  });
+
+  // کلیک روی ضربدر
+  document.querySelectorAll('.close-modal').forEach(btn => {
+    btn.addEventListener('click', function () {
+      const modal = this.closest('.menu-modal');
+      if (modal) {
+        closeModal(modal.id);
+      }
+    });
+  });
+
+  // دکمه برگشت (Back)
+  window.addEventListener('popstate', () => {
     if (currentModal) {
-      closeCurrentModal();
+      closeModal();
     }
   });
 </script>
