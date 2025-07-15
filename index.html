@@ -556,6 +556,54 @@ function openFriedModal(type) {
     });
   });
 </script>
+<script>
+  let currentModal = null;
+
+  // باز کردن modal
+  document.querySelectorAll('.menu-item').forEach(item => {
+    item.addEventListener('click', function (e) {
+      e.preventDefault();
+      const type = this.getAttribute('data-menu');
+      const modal = document.getElementById(`menu_${type}Modal`);
+      if (modal) {
+        modal.classList.add('show');
+        document.body.style.overflow = 'hidden';
+        currentModal = modal;
+
+        // اضافه کردن وضعیت جدید به history
+        history.pushState({ modalOpen: true }, '');
+      }
+    });
+  });
+
+  // بستن modal با ضربدر
+  document.querySelectorAll('.close-modal').forEach(btn => {
+    btn.addEventListener('click', () => {
+      closeCurrentModal();
+    });
+  });
+
+  // تابع بستن مدال
+  function closeCurrentModal() {
+    if (currentModal) {
+      currentModal.classList.remove('show');
+      document.body.style.overflow = 'auto';
+      currentModal = null;
+
+      // بازگشت به عقب در history فقط اگر modal باز شده باشد
+      if (history.state && history.state.modalOpen) {
+        history.back();
+      }
+    }
+  }
+
+  // واکنش به دکمه برگشت موبایل
+  window.addEventListener('popstate', function () {
+    if (currentModal) {
+      closeCurrentModal();
+    }
+  });
+</script>
 
 </body>
 </html>
