@@ -41,32 +41,32 @@
             <h2 class="menu-title">دسته بندی منو</h2>
             <div class="menu-grid">
 
-                <a href="#" class="menu-item">
+                <a href="#" class="menu-item" data-menu="pizza">
                 <img src="./images/icons/levitating-delight-tempting-pizza-suspended-mid-air-irresistible-culinary-spectacle-290349028.webp" alt="پیتزا">
                 <span>پیتزا</span>
                 </a>
 
-                <a href="#" class="menu-item">
+                <a href="#" class="menu-item" data-menu="fried">
                 <img src="./images/icons/plate-fried-chicken-wings-with-black-background_25996-5235.avif" alt="سوخاری">
                 <span>سوخاری</span>
                 </a>
 
-                <a href="#" class="menu-item">
+                <a href="#" class="menu-item" data-menu="burger">
+                <img src="./images/icons/of-fast-food-on-a-black-background-generated-by-ai-photo (1).jpg" alt=" برگر ">
+                <span> برگر ها</span>
+                </a>
+                
+                <a href="#" class="menu-item" data-menu="sandwich">
                 <img src="./images/icons/images.jpg" alt="ساندویچ ها">
                 <span>ساندویچ </span>
                 </a>
 
-                <a href="#" class="menu-item">
+                <a href="#" class="menu-item" data-menu="pasta">
                 <img src="./images/icons/spaghetti-tomato-sauce-herbs-black-bowl-dark-background-ai-generated-hot-concept-food-pasta-tomato-sauce-350153477.webp" alt="پاستا">
                 <span>پاستا</span>
-                </a>
+                </a>                
 
-                <a href="#" class="menu-item">
-                <img src="./images/icons/of-fast-food-on-a-black-background-generated-by-ai-photo (1).jpg" alt=" برگر ">
-                <span> برگر ها</span>
-                </a>
-
-                <a href="#" class="menu-item">
+                <a href="#" class="menu-item" data-menu="borek">
                 <img src="./images/icons/of-fast-food-on-a-black-background-generated-by-ai-photo.jpg" alt="بورک">
                 <span>بورک </span>
                 </a>
@@ -128,6 +128,351 @@
 
     </section>
 
+
+   <!-- Modal Container -->
+<div class="menu-modal" id="pizzaModal">
+  <div class="modal-content">
+    <span class="close-modal" onclick="closeModal('pizzaModal')">×</span>
+    
+    <h2 class="menu-title">پیتزاهای ویژه</h2>
+    <p style="text-align:center; margin-bottom: 1rem;">
+      این پیتزاها با مواد اولیه تازه، پنیر مخصوص و دستور تهیه‌ی اختصاصی ما آماده شده‌اند.
+    </p>
+    
+    <div class="modal-grid">
+      <!-- کارت‌های گریدی پیتزا -->
+      <div class="pizza-card">
+        <img src="./images/pizzas/Pepperoni pizza.jpg" alt="پیتزا پپرونی">
+        <h4>پیتزا پپرونی</h4>
+        <p>پپرونی تند، پنیر موزارلا و سس گوجه، فلفل دلمه، ذرت</p>
+      </div>
+      <div class="pizza-card">
+        <img src="./images/pizzas/special.jpeg" alt="پیتزا اسپشیال">
+        <h4>پیتزا اسپیشیال</h4>
+        <p>ژامبون گوشت، ژامبون مرغ، سینه مرغ، استیک گوساله، قارچ، فلفل دمله، ذرت</p>
+      </div>
+      <div class="pizza-card">
+        <img src="./images/pizzas/roastbeef.avif" alt="پیتزا رست بیف  ">
+        <h4>پیتزا رست بیف </h4>
+       <p>گوشت گوساله، قارچ، فلفل دلمه، ذرت</p>
+      </div>
+      <div class="pizza-card">
+        <img src="./images/pizzas/Garlic and Steak Pizza.jpg" alt="پیتزا سیر واستیک">
+        <h4>پیتزا سیر و استیک</h4>
+        <p>استیک گوساله، روغن سیر، قارچ، فلفل دلمه، ذرت</p>
+      </div>
+      <div class="pizza-card">
+        <img src="./images/pizzas/Four Seasons Pizza.webp" alt="پیتزا چهار فصل">
+        <h4>پیتزا چهار فصل</h4>
+        <p>گوشت چرخ کرده، سینه مرغ گریل، ژامبون پپرونی، ژامبون گوشت و مرغ، قارچ،فلفل دلمه ، ذرت</p>
+      </div>
+      <div class="pizza-card">
+        <img src="./images/pizzas/Meat and cheese pizza.jpg" alt="پیتزا   گوشت و قارچ">
+        <h4>پیتزا گوشت و قارچ</h4>
+        <p>گوشت چرخ‌کرده، قارچ، پنیر گودا</p>
+      </div>
+      <div class="pizza-card">
+        <img src="./images/pizzas/Chicken and mushroom pizza.jpg" alt="پیتزا مرغ و قارچ">
+        <h4>پیتزا مرغ و قارچ</h4>
+        <p>سینه مرغ  گریل، قارچ، پنیر گودا</p>
+      </div>
+      <div class="pizza-card">
+        <img src="./images/pizzas/Barbecue pizza.jpg" alt="پیتزا  باربیکیو ">
+        <h4>پیتزا بار بیکیو</h4>
+        <p>گوشت چرخ‌کرده، قارچ، پنیر گودا</p>
+      </div>
+      <div class="pizza-card">
+        <img src="./images/pizzas/Vegetable pizza.jpg" alt="پیتزا سبزیجات">
+        <h4>پیتزا سبزیجات</h4>
+        <p>گوشت چرخ‌کرده، قارچ، پنیر گودا</p>
+      </div>
+      <div class="pizza-card">
+        <img src="./images/pizzas/Garlic Bread Pizza.jpg" alt="پیتزا نان سیر">
+        <h4>نان سیر </h4>
+        <p>روغن سیر، پنیر پیتزا</p>
+      </div>
+      
+      <!-- سایر کارت‌ها -->
+    </div>
+
+  </div>
+</div>
+
+    <div class="menu-modal" id="friedModal">
+  <div class="modal-content">
+    <span class="close-modal" onclick="closeModal('friedModal')">×</span>
+
+    <h2 class="menu-title">سوخاری‌های خوشمزه</h2>
+    <p style="text-align:center; margin-bottom: 1rem;">
+      با ترکیب ادویه‌های خاص و تکنیک سرخ کردن ویژه، طعمی فراموش‌نشدنی را تجربه کنید.
+    </p>
+
+    <div class="fried-grid">
+  <a href="#" class="fried-item" data-fried="fillet">
+    <img src="./images/fried/delicious-hot-and-crispy-fried-chicken-meat-free-photo.jpg" alt="فیله سوخاری">
+    <span>فیله سوخاری</span>
+  </a>
+  <a href="#" class="fried-item" data-fried="breast">
+    <img src="./images/fried/images.jpg" alt="سینه سوخاری">
+    <span>سینه سوخاری</span>
+  </a>
+  <a href="#" class="fried-item" data-fried="wing">
+    <img src="./images/fried/delicious-hot-and-crispy-fried-chicken-meat-free-photo (2).jpg" alt="بال سوخاری">
+    <span>بال سوخاری</span>
+  </a>
+  <a href="#" class="fried-item" data-fried="leg">
+    <img src="./images/fried/delicious-hot-and-crispy-fried-chicken-meat-free-photo (1).jpg" alt="کتف سوخاری">
+    <span>کتف سوخاری</span>
+  </a>
+  <!-- <a href="#" class="fried-item" data-fried="bucket">
+    <img src="./images/fried/bucket.jpg" alt="سینی سوخاری">
+    <span>سینی ویژه</span>
+  </a> -->
+</div>
+<div class="menu-modal" id="fried_filletModal">
+  <div class="modal-content">
+    <span class="close-modal" onclick="closeModal('fried_filletModal')">×</span>
+    <h2 class="menu-title">فیله‌های سوخاری</h2>
+    <div class="modal-grid">
+      <div class="pizza-card">
+        <img src="./images/fried/file1.jpg" alt="فیله اسپایسی">
+        <h4> فیله کلاسیک (Mild)</h4>
+        <p>ترد،طعم ملایم با ادویه‌های کلاسیک</p>
+      </div>
+      <div class="pizza-card">
+        <img src="./images/fried/file2.jpg" alt="فیله کلاسیک">
+        <h4>فیله اسپایسی (Hot)</h4>
+        <p>تند و فلفلی با طعم تیز پاپریکا و چیلی قرمز</p>
+      </div>
+      <div class="pizza-card">
+        <img src="./images/fried/file3.jpg" alt="فیله کلاسیک">
+        <h4> فیله سوخاری با سس سیر و کره</h4>
+        <p>طعمی مایل به کرمی و معطر از کره و سیر برشته</p>
+      </div>
+      <div class="pizza-card">
+        <img src="./images/fried/file4.webp" alt="فیله کلاسیک">
+        <h4>فیله سوخاری با ادویه هندی (تیکا)</h4>
+        <p>طعمی مایل به کرمی و معطر از کره و سیر برشته</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="menu-modal" id="fried_breastModal">
+  <div class="modal-content">
+    <span class="close-modal" onclick="closeModal('fried_breastModal')">×</span>
+    <h2 class="menu-title">سینه سوخاری</h2>
+    <div class="modal-grid">
+      <div class="pizza-card">
+        <img src="./images/fried/sin1.jpg" alt="فیله اسپایسی">
+        <h4> سینه کلاسیک (Mild)</h4>
+        <p>ترد،طعم ملایم با ادویه‌های کلاسیک</p>
+      </div>
+      <div class="pizza-card">
+        <img src="./images/fried/sin2.jpg" alt="فیله کلاسیک">
+        <h4>سینه اسپایسی (Hot)</h4>
+        <p>تند و فلفلی با طعم تیز پاپریکا و چیلی قرمز</p>
+      </div>
+      <div class="pizza-card">
+        <img src="./images/fried/sin3.jpg" alt="فیله کلاسیک">
+        <h4> سینه سوخاری با سس سیر و کره</h4>
+        <p>طعمی مایل به کرمی و معطر از کره و سیر برشته</p>
+      </div>
+      <div class="pizza-card">
+        <img src="./images/fried/sin4.jpg" alt="فیله کلاسیک">
+        <h4>سینه سوخاری با ادویه هندی (تیکا)</h4>
+        <p>طعمی مایل به کرمی و معطر از کره و سیر برشته</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="menu-modal" id="fried_wingModal">
+  <div class="modal-content">
+    <span class="close-modal" onclick="closeModal('fried_wingModal')">×</span>
+    <h2 class="menu-title">بال‌های سوخاری</h2>
+    <div class="modal-grid">
+        <div class="pizza-card">
+        <img src="./images/fried/wing1.webp" alt="بال کره‌ای">
+        <h4>بال کلاسیک</h4>
+        <p>ترد و طعم کلاسیک</p>
+      </div>
+      <div class="pizza-card">
+        <img src="./images/fried/wing2.jpg" alt="بال بوفالو">
+        <h4>بال بوفالو</h4>
+        <p>تند، ترش و خوشمزه با سس مخصوص</p>
+      </div>
+      <div class="pizza-card">
+        <img src="./images/fried/wing3.jpg" alt="بال باربیکیو">
+        <h4>بال باربیکیو</h4>
+        <p>طعم دودی با سس شیرین و اسپایسی</p>
+      </div>
+      <div class="pizza-card">
+        <img src="./images/fried/wing4.jpg" alt="بال کره‌ای">
+        <h4>بال اسپایسی</h4>
+        <p>تند و فلفلی با طعم تیز پاپریکا و چیلی قرمز</p>
+      </div>
+      <div class="pizza-card">
+        <img src="./images/fried/wing5.jpg" alt="بال کره‌ای">
+        <h4>بال تیکا</h4>
+        <p>طعمی مایل به کرمی و معطر از کره و سیر برشته</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="menu-modal" id="fried_legModal">
+  <div class="modal-content">
+    <span class="close-modal" onclick="closeModal('fried_legModal')">×</span>
+    <h2 class="menu-title">کتف سوخاری</h2>
+    <div class="modal-grid">
+        <div class="pizza-card">
+        <img src="./images/fried/ketf1.jpg" alt="بال کره‌ای">
+        <h4>کتف کلاسیک</h4>
+        <p>ترد و طعم کلاسیک</p>
+      </div>
+      <div class="pizza-card">
+        <img src="./images/fried/ketf2.webp" alt="بال بوفالو">
+        <h4>کتف بوفالو</h4>
+        <p>تند، ترش و خوشمزه با سس مخصوص</p>
+      </div>
+      <div class="pizza-card">
+        <img src="./images/fried/ketf3.avif" alt="بال باربیکیو">
+        <h4>کتف باربیکیو</h4>
+        <p>طعم دودی با سس شیرین و اسپایسی</p>
+      </div>
+
+      <div class="pizza-card">
+        <img src="./images/fried/ketf4.jpg" alt="بال کره‌ای">
+        <h4>کتف اسپایسی</h4>
+        <p>تند و فلفلی با طعم تیز پاپریکا و چیلی قرمز</p>
+      </div>
+      <div class="pizza-card">
+        <img src="./images/fried/ketf5.jpg" alt="بال کره‌ای">
+        <h4>کتف تیکا</h4>
+        <p>طعمی مایل به کرمی و معطر از کره و سیر برشته</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+  </div>
+</div>
+
+<div class="menu-modal" id="menu_sandwichModal">
+  <div class="modal-content">
+    <span class="close-modal" onclick="closeModal('menu_sandwichModal')">×</span>
+    <h2 class="menu-title">ساندویچ‌های خوشمزه</h2>
+    <div class="modal-grid">
+      <div class="pizza-card">
+        <img src="./images/sandwich/sandwich1.webp" alt="ساندویچ استیک">
+        <h4>ساندویچ استیک</h4>
+        <p>با گوشت گریل‌شده و پنیر چدار</p>
+      </div>
+      <div class="pizza-card">
+        <img src="./images/sandwich/2.avif" alt="ساندویچ مرغ">
+        <h4>ساندویچ مرغ</h4>
+        <p>مرغ گریل‌شده، سس سیر، پنیر موزارلا</p>
+      </div>
+      <div class="pizza-card">
+        <img src="./images/sandwich/3.jpg" alt="ساندویچ سالامی">
+        <h4>ژامبون گوشت </h4>
+        <p>ژامبون   گوشت با پنیر گودا و خیارشور</p>
+      </div>
+      <div class="pizza-card">
+        <img src="./images/sandwich/4.jpg" alt="ساندویچ سالامی">
+        <h4>ژامبون مرغ </h4>
+        <p>ژامبون  مرغ با پنیر گودا و خیارشور</p>
+      </div>
+      <div class="pizza-card">
+        <img src="./images/sandwich/5.jpg" alt="ساندویچ گیاهی">
+        <h4>هات‌داگ کلاسیک</h4>
+        <p>سوسیس ویژه با خردل و سس کچاپ</p>
+    </div>
+      <div class="pizza-card">
+        <img src="./images/sandwich/6.jpg" alt="ساندویچ گیاهی">
+        <h4>هات‌داگ پنیری</h4>
+        <p>هات‌داگ تند با پنیر آب‌شده، سس قارچ</p>
+    </div>
+  </div>
+</div>
+</div>
+
+<div class="menu-modal" id="burgerModal">
+  
+  <div class="modal-content">
+    <span class="close-modal" onclick="closeModal('menu_burgerModal')">×</span>
+    <h2 class="menu-title">برگرهای خاص</h2>
+    <div class="modal-grid">
+      <!-- هر مدل برگر یک کارت -->
+      <div class="pizza-card">
+        <img src="./images/burger/hamburger1.jpg" alt="برگر کلاسیک">
+        <h4>برگر کلاسیک</h4>
+        <p> همبرگر دست ساز با کاهو، گوجه و سس مخصوص</p>
+      </div>
+      <div class="pizza-card">
+        <img src="./images/burger/cheeseburger2.jpg" alt="چیزبرگر">
+        <h4>چیزبرگر</h4>
+        <p>همبرگر با پنیر چدار، پیاز کاراملی و نان کنجدی</p>
+      </div>
+      <div class="pizza-card">
+        <img src="./images/burger/mushroom burger3.png" alt="مشروم برگر">
+        <h4>ماشروم برگر</h4>
+        <p>همبرگر با سس قارچ، پنیر سوئیسی و پیاز سرخ‌شده</p>
+      </div>
+      <div class="pizza-card">
+        <img src="./images/burger/mushroom burger4.jpg" alt="اسپایسی برگر">
+        <h4>اسپایسی برگر</h4>
+        <p>گوشت تند، هالوپینو، پنیر تند و سس فلفل</p>
+      </div>
+      <div class="pizza-card">
+        <img src="./images/burger/mushroom burger5.jpg" alt="دابل برگر">
+        <h4>دوبل برگر</h4>
+        <p>دو لایه گوشت گریل‌شده با پنیر، کاهو و سس باربیکیو</p>
+      </div>
+      <div class="pizza-card">
+        <img src="./images/burger/mushroom burger6.avif" alt="چیکن برگر">
+        <h4>چیکن برگر</h4>
+        <p>فیله مرغ گریل شده با سس سیر و خیارشور</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="menu-modal" id="pastaModal">
+  <div class="modal-content">
+    <span class="close-modal" onclick="closeModal('menu_pastaModal')">×</span>
+    <h2 class="menu-title">برگرهای خاص</h2>
+    <div class="modal-grid">
+      <!-- هر مدل برگر یک کارت -->
+      <div class="pizza-card">
+        <img src="">
+        <h4>بزودی اضافه خواهد شد</h4>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="menu-modal" id="borekModal">
+  <div class="modal-content">
+    <span class="close-modal" onclick="closeModal('menu_borekModal')">×</span>
+    <h2 class="menu-title">برگرهای خاص</h2>
+    <div class="modal-grid">
+      <!-- هر مدل برگر یک کارت -->
+      <div class="pizza-card">
+        <img src="">
+        <h4>بزودی اضافه خواهد شد</h4>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
     <script>
   const slides = document.querySelectorAll(".slider-item .item");
   let index = 0;
@@ -145,7 +490,72 @@
   // اجرای خودکار
   setInterval(slide, duration);
 </script>
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+  document.body.addEventListener('click', function (e) {
+    const target = e.target.closest('.menu-item');
+    if (target) {
+      e.preventDefault();
+      const modalId = target.getAttribute('data-menu');
+      if (modalId) {
+        const modalElement = document.getElementById(`${modalId}Modal`);
+        if (modalElement) {
+          modalElement.classList.add('show');
+        }
+      }
+    }
+  });
+});
 
-    <script src="./js/app.js"></script>
+function closeModal(id) {
+  document.getElementById(id).classList.remove('show');
+}
+    </script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+  document.querySelectorAll('.fried-item').forEach(item => {
+    item.addEventListener('click', function (e) {
+      e.preventDefault();
+      const type = this.getAttribute('data-fried');
+      openFriedModal(type);
+    });
+  });
+});
+
+function openFriedModal(type) {
+  // فرض کن modalهای مختلف داریم مثل: fried_filletModal, fried_wingModal, ...
+  const modal = document.getElementById(`fried_${type}Modal`);
+  if (modal) {
+    modal.classList.add('show');
+  }
+}
+
+    </script>
+<script>
+  // باز کردن مدال‌ها با کلیک روی آیتم منو
+  document.querySelectorAll('.menu-item').forEach(item => {
+    item.addEventListener('click', function (e) {
+      e.preventDefault();
+      const type = this.getAttribute('data-menu');
+      const modal = document.getElementById(`menu_${type}Modal`);
+      if (modal) {
+        modal.classList.add('show');
+        document.body.style.overflow = 'hidden'; // جلوگیری از اسکرول پس‌زمینه
+      }
+    });
+  });
+
+  // بستن مدال با کلیک روی ضربدر
+  document.querySelectorAll('.close-modal').forEach(closeBtn => {
+    closeBtn.addEventListener('click', function () {
+      const modal = this.closest('.menu-modal');
+      if (modal) {
+        modal.classList.remove('show');
+        document.body.style.overflow = 'auto'; // بازگرداندن اسکرول
+      }
+    });
+  });
+</script>
+
 </body>
 </html>
