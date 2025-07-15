@@ -329,3 +329,183 @@ header .navbar .menu {
         margin-top: 1rem;
     }
 }
+
+.menu-modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 9999;
+  justify-content: center;
+  align-items: center;
+  animation: fadeIn 0.3s ease;
+}
+
+.menu-modal.show {
+  display: flex;
+}
+.modal-content {
+  background: #1f1f1f;
+  border-radius: 15px;
+  padding: 2rem;
+  max-width: 1000px;
+  width: 95%;
+  color: #fff;
+  position: relative;
+  overflow-y: auto;
+  max-height: 90vh;
+  animation: goldShine 1.5s ease;
+}
+.close-modal {
+  position: absolute;
+  left: 15px;
+  top: 10px;
+  font-size: 2rem;
+  color: #f3c56b;
+  cursor: pointer;
+}
+
+.modal-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 1.5rem;
+  padding-top: 1rem;
+}
+
+.modal-image img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+.modal-info h2 {
+  font-size: 1.8rem;
+  color: #f3c56b;
+  margin-bottom: 1rem;
+}
+
+.modal-info p {
+  font-size: 1rem;
+  margin-bottom: 1rem;
+  line-height: 1.8;
+}
+
+.modal-info ul {
+  padding-right: 1rem;
+  line-height: 1.7;
+}
+
+@media (max-width: 768px) {
+  .modal-grid {
+    grid-template-columns: 3, 1fr;
+  }
+}
+@media (max-width: 576px) {
+  .menu-modal .modal-grid{
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .pizza-card h4 {
+    font-size: 15px;
+  }
+  .pizza-card p {
+    font-size: 11px;
+  }
+}
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* کارت پیتزا */
+.pizza-card {
+  background: #292929;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 0 15px rgba(243, 197, 107, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-align: center;
+  padding: 10px;
+}
+
+.pizza-card:hover {
+  transform: scale(1.03);
+  box-shadow: 0 0 25px rgba(243, 197, 107, 0.5);
+}
+
+.pizza-card img {
+  width: 100%;
+  border-radius: 10px;
+  object-fit: cover;
+  height: 120px;
+  margin-bottom: 10px;
+}
+
+.pizza-card h4 {
+  color: #f3c56b;
+  font-size: 1rem;
+  margin-bottom: 0.3rem;
+}
+
+.pizza-card p {
+  font-size: 0.85rem;
+  color: #ccc;
+  line-height: 1.5;
+}
+
+/* انیمیشن طلایی هنگام باز شدن */
+@keyframes goldShine {
+  0% {
+    box-shadow: 0 0 0 rgba(243, 197, 107, 0);
+  }
+  50% {
+    box-shadow: 0 0 40px rgba(243, 197, 107, 0.3);
+  }
+  100% {
+    box-shadow: 0 0 0 rgba(243, 197, 107, 0);
+  }
+}
+
+.fried-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 20px;
+  margin-top: 2rem;
+}
+
+.fried-item {
+  background-color: #1f1f1f;
+  border-radius: 15px;
+  overflow: hidden;
+  text-align: center;
+  color: #f3c56b;
+  text-decoration: none;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+  transition: transform 0.3s ease, background 0.3s ease;
+  position: relative;
+}
+
+.fried-item img {
+  width: 100%;
+  height: 140px;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.fried-item span {
+  display: block;
+  padding: 10px 0;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.fried-item:hover {
+  transform: translateY(-5px);
+  background-color: #f3c56b;
+  color: #111;
+}
+
+.fried-item:hover img {
+  transform: scale(1.05);
+}
