@@ -48,7 +48,7 @@ header .navbar .social {
     display: flex;
     justify-content: space-evenly;
     flex: 1;
-    min-width: 180px;
+    min-width: 200px;
     padding: 1rem 0;
 }
 
@@ -60,7 +60,7 @@ header .navbar .social ul {
 
 header .navbar .social ul li a {
     color: #999;
-    font-size: 0.75rem;
+    font-size: 0.65rem;
     text-align: center;
     text-decoration: none;
     display: block;
@@ -74,7 +74,9 @@ header .navbar .social ul li a:hover {
 
 header .navbar .social img {
     width: 20px;
-    margin-top: 0.5rem;
+    position: absolute;
+    top: 18px;
+    right: 187px;
 }
 
 header .navbar .menu {
@@ -116,6 +118,7 @@ header .navbar .menu ul li a img {
 header .navbar .ads {
     flex: 1;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     padding-top: 1rem;
@@ -124,8 +127,36 @@ header .navbar .ads {
 header .navbar .ads img {
     height: auto;
     max-width: 100%;
+    margin-bottom: 5px;
 }
 
+header .navbar .ads .ads-italy{
+  width: 187px;
+  height: 15px;
+  flex: 1;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+header .navbar .ads .ads-italy .green{
+  width: 32%;
+  height: 14px;
+  border-radius: 14px;
+  background-color: green;
+}
+header .navbar .ads .ads-italy .white{
+  width: 32%;
+  height: 14px;
+  border-radius: 14px;
+  background-color: rgb(243, 247, 243);
+}
+header .navbar .ads .ads-italy .red{
+  width: 32%;
+  height: 14px;
+  border-radius: 14px;
+  background-color: rgb(255, 0, 0);
+}
 .slide-shortcat {
     width: 100%;
     min-height: 60vh;
@@ -150,6 +181,17 @@ header .navbar .ads img {
     margin-bottom: 1rem;
     color: #f3c56b;
     text-align: center;
+}
+
+.morgh{
+  width: 100%;
+  height: 200px;
+}
+.morgh h2{
+  font-size: 1rem;
+  margin-bottom: 1rem;
+  color: #e93225;
+  text-align: center;
 }
 
 .menu-grid {
@@ -182,7 +224,23 @@ header .navbar .ads img {
     margin-bottom: 0.5rem;
     object-fit: contain;
 }
+.morgh{
+  width: 100%;
+  height: 200px;
+  margin-bottom: 100px;
+}
+.morgh h2{
+  font-size: 1rem;
+  margin-bottom: 1rem;
+  color: #e93225;
+  text-align: center;
+}
+.morgh img{
 
+  width: 100% ;
+  height: 200px;
+
+}
 .menu-item span {
     font-size: 0.95rem;
     font-weight: bold;
