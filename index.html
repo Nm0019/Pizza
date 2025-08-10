@@ -15,7 +15,7 @@
 
                      <ul>
                         <li><a href="tel:09927058024">8024 705 0992</a></li>
-                        <li><a href=""> پرند فاز6، بلوار کوه نور، نرسیده به فروشگاه جانبو، پشت نانوایی لواشی، طبقه فوقانی لبنیات بابا حاجی</a></li>
+                        <li><a href=""> پرند فاز6، بلوار کوه نور، نرسیده به فروشگاه جانبو، پشت نانوایی لواشی</a></li>
                    
                     </ul>
                     <img src="./images/2345583961644374637.svg" alt=""> 
@@ -39,6 +39,12 @@
     <section class="slide-shortcat">
         <div class="short_menu">
             <h2 class="menu-title">دسته بندی منو</h2>
+            <div class="morgh">
+              <a href="#" class="menu-item" data-menu="morgh">
+                <h2>مرغ شکم پر تنوری</h2>
+                <img src="images/icons/morgh.jpg"  alt="">
+              </a>
+            </div>
             <div class="menu-grid">
 
                 <a href="#" class="menu-item" data-menu="pizza">
@@ -138,11 +144,26 @@
 
         <div class="shortcat">
           <ul>
-            <li><span class="label">✨ ویژه‌ها</span></li>
-            <li><span class="label">👨‍🍳 پیشنهاد سرآشپز</span></li>
-            <li><span class="label">👨‍👩‍👧 پک‌های چند نفره</span></li>
-            <li><span class="label">🔥 جدیدترین‌ها</span></li>
-            <li><span class="label">❤️ پرفروش‌ترین‌ها</span></li>
+            <li><span class="label" >✨ ویژه‌ها</span>
+            <a href="#" class="menu-item" data-menu="vijhe">
+              کیلک کنید
+            </a></li>
+            <!-- <li><span class="label">👨‍🍳 پیشنهاد سرآشپز</span>
+            <a href="#" class="menu-item" data-menu="pizza">
+              کیلک کنید
+            </a></li></li>
+            <li><span class="label">👨‍👩‍👧 پک‌های چند نفره</span>
+            <a href="#" class="menu-item" data-menu="pizza">
+              کیلک کنید
+            </a></li></li>
+            <li><span class="label">🔥 جدیدترین‌ها</span>
+            <a href="#" class="menu-item" data-menu="pizza">
+              کیلک کنید
+            </a></li></li>
+            <li><span class="label">❤️ پرفروش‌ترین‌ها</span>
+            <a href="#" class="menu-item" data-menu="pizza">
+              کیلک کنید
+            </a></li></li> -->
             </ul>
         </div>
 
@@ -150,6 +171,21 @@
 
 
    <!-- Modal Container -->
+<div class="menu-modal" id="morghModal">
+  <div class="modal-content">
+    <span class="close-modal" onclick="closeModal('menu_morghModal')">×</span>
+    <h2 class="menu-title"> مرغ شکم پر تنوری</h2>
+    <div class="modal-grid">
+      <!-- هر مدل برگر یک کارت -->
+      <div class="pizza-card">
+        <img src="images/morgh/1.avif">
+        <h4>قیمت :</h4>
+        <p>350.000</p>
+      </div>
+    </div>
+  </div>
+</div>
+
 <div class="menu-modal" id="pizzaModal">
   <div class="modal-content">
     <span class="close-modal" onclick="closeModal('pizzaModal')">×</span>
@@ -680,7 +716,7 @@
       <div class="pizza-card">
         <img src="images/icons/a-large-submarine-sandwich-on-a-wooden-table-ai-generated-free-photo.jpeg">
         <h4>ساندویچ ویژه اژدر غول</h4>
-        <p>هات داگ 80 درصد، دوتا همبرگر دستی، سیب زمینی سرخ کرده، کاهو گوجه خیار شور</p>
+        <p>هات داگ 80 درصد، دوتا همبرگر دستی، سیب زمینی سرخ کرده، کاهو گوجه خیلر شور</p>
         <p>قیمت :</p>
         <p>240.000</p>
       </div>
@@ -791,7 +827,7 @@
       <!-- هر مدل برگر یک کارت -->
       <div class="pizza-card">
         <img src="images/drink/images (1).jpg">
-        <h4>نوشبه خانواده کولا</h4>
+        <h4>نوشبه خانواده سیاه</h4>
         <p>60.000</p>
       </div>
 
@@ -824,6 +860,91 @@
     </div>
   </div>
 </div>
+
+<div class="menu-modal" id="vijheModal">
+  <div class="modal-content">
+    <span class="close-modal" onclick="closeModal('menu_vijheModal')">×</span>
+    <h2 class="menu-title"> ویژه های کلبه</h2>
+    <div class="modal-grid">
+      <!-- هر مدل برگر یک کارت -->
+      <div class="pizza-card">
+        <img src="images/morgh/1.avif">
+        <h4>مرغ شکم پر تنوری</h4>
+        <h4>قیمت :</h4>
+        <p>350.000</p>
+      </div>
+      <div class="pizza-card">
+        <img src="./images/pizzas/special.jpeg" alt="پیتزا اسپشیال">
+        <h4>پیتزا اسپیشیال</h4>
+        <p>ژامبون گوشت، ژامبون مرغ، سینه مرغ، قارچ، فلفل دمله، ذرت</p>
+        <h4>قیمت ها : </h4>
+        <p>متوسط :</p>
+        <p>280.000</p>
+        <p>خانواده :</p>
+        <p>350.000</p>
+      </div>
+      <div class="pizza-card">
+        <img src="./images/pizzas/roastbeef.avif" alt="پیتزا رست بیف  ">
+        <h4>پیتزا رست بیف </h4>
+       <p>گوشت گوساله، قارچ، فلفل دلمه، ذرت</p>
+        <h4>قیمت ها :</h4>
+        <p>متوسط :</p>
+        <p>260.000</p>
+        <p>خانواده :</p>
+        <p>330.000</p>
+      </div>
+      <div class="pizza-card">
+        <img src="./images/fried/sin1.jpg" alt="فیله اسپایسی">
+        <h4> سینه کلاسیک (Mild)</h4>
+        <p>ترد،طعم ملایم با ادویه‌های کلاسیک</p>
+        <h4>قیمت ها :</h4>
+        <p>150 گرم</p>
+        <p>100.000</p>
+        <p>300 گرم</p>
+        <p>170.000</p>
+        <p>600 گرم</p>
+        <p>340.000</p>
+      </div>
+      <div class="pizza-card">
+        <img src="./images/fried/wing1.webp" alt="بال کره‌ای">
+        <h4>کتف و بال کلاسیک</h4>
+        <p>ترد و طعم کلاسیک</p>
+        <h4>قیمت ها :</h4>
+        <p>150 گرم</p>
+        <p>80.000</p>
+        <p>300 گرم</p>
+        <p>150.000</p>
+        <p>600 گرم</p>
+        <p>290.000</p>
+      </div>
+      <div class="pizza-card">
+        <img src="./images/sandwich/1.jpg" alt="ساندویچ مرغ">
+        <h4>ساندویچ رست بیف</h4>
+        <p>گوشت گوساله با پنیر پیتزا، کاهو گوجه و خیار شور</p>
+        <h4>قیمت :</h4>
+        <p>220.000</p>
+      </div>
+      <div class="pizza-card">
+        <img src="./images/burger/cheeseburger2.jpg" alt="چیزبرگر">
+        <h4>چیزبرگر</h4>
+        <p>همبرگر 90% با پنیر پیتزا، کاهو، گوجه و خیار شور</p>
+        <h4>قیمت ها :</h4>
+        <p>180.000</p>
+      </div>
+      <div class="pizza-card">
+        <img src="images/icons/a-large-submarine-sandwich-on-a-wooden-table-ai-generated-free-photo.jpeg">
+        <h4>ساندویچ ویژه اژدر غول</h4>
+        <p>هات داگ 80 درصد، دوتا همبرگر دستی، سیب زمینی سرخ کرده، کاهو گوجه خیلر شور</p>
+        <p>قیمت :</p>
+        <p>240.000</p>
+      </div>
+      
+    </div>
+
+    </div>
+  </div>
+</div>
+
 
 
 
@@ -950,4 +1071,3 @@ function openFriedModal(type) {
 
 </body>
 </html>
-
