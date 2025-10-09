@@ -183,6 +183,17 @@ header .navbar .ads .ads-italy .red{
     text-align: center;
 }
 
+.morgh{
+  width: 100%;
+  height: 200px;
+}
+.morgh h2{
+  font-size: 1rem;
+  margin-bottom: 1rem;
+  color: #e93225;
+  text-align: center;
+}
+
 .menu-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
@@ -213,7 +224,23 @@ header .navbar .ads .ads-italy .red{
     margin-bottom: 0.5rem;
     object-fit: contain;
 }
+.morgh{
+  width: 100%;
+  height: 200px;
+  margin-bottom: 100px;
+}
+.morgh h2{
+  font-size: 1rem;
+  margin-bottom: 1rem;
+  color: #e93225;
+  text-align: center;
+}
+.morgh img{
 
+  width: max-content;
+  height: 200px;
+
+}
 .menu-item span {
     font-size: 0.95rem;
     font-weight: bold;
