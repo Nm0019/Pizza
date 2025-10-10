@@ -237,7 +237,7 @@ header .navbar .ads .ads-italy .red{
 }
 .morgh img{
 
-  width: 100% ;
+  width: max-content;
   height: 200px;
 
 }
