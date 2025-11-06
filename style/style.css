@@ -1,278 +1,723 @@
-document.addEventListener("DOMContentLoaded", () => {
+@font-face {
+    font-family: 'vazir';
+    src: url(../fonts/vazir-font-v16.1.0/Vazir.eot);
+    src: url(../fonts/vazir-font-v16.1.0/Vazir.ttf);
+    src: url(../fonts/vazir-font-v16.1.0/Vazir.woff);
+}
+@font-face {
+    font-family: 'yekan';
+    src: url(../fonts/B_Yekan/Yekan.ttf);
+}
 
-  // ===== SLIDER =====
-  const slides = document.querySelectorAll(".slider-item .item");
-  let index = 0;
-  const duration = 4000;
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    list-style: none;
+}
 
-  function slide() {
-    slides.forEach(slide => slide.classList.remove("active"));
-    if (slides[index]) slides[index].classList.add("active");
-    index = (index + 1) % slides.length;
+body {
+    direction: rtl;
+    font-family: 'vazir';
+    background: #2f2f2f;
+}
+
+.container {
+    margin: 0 auto;
+    padding: 0 2%;
+    max-width: 1220px;
+    width: 100%;
+}
+
+header {
+    width: 100%;
+    height: 20vh;
+    color: #999;
+    background-color: #1F1F1F;
+}
+
+header .navbar {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+}
+
+header .navbar .social {
+    display: flex;
+    justify-content: space-evenly;
+    flex: 1;
+    min-width: 200px;
+    padding: 1rem 0;
+}
+
+header .navbar .social ul {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+header .navbar .social ul li a {
+    color: #999;
+    font-size: 0.65rem;
+    text-align: center;
+    text-decoration: none;
+    display: block;
+    transition: background 0.3s ease-in-out;
+}
+
+header .navbar .social ul li a:hover {
+    background-color: tan;
+    border-radius: 10px 20px;
+}
+
+header .navbar .social img {
+    width: 20px;
+    position: absolute;
+    top: 18px;
+    right: 187px;
+}
+
+header .navbar .menu {
+    flex: 2;
+    min-width: 200px;
+    display: flex;
+    justify-content: center;
+    padding-top: 1rem;
+}
+
+header .navbar .menu ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+}
+
+header .navbar .menu ul li a {
+    color: #999;
+    font-size: 1.2rem;
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: 0.3s ease-in-out;
+}
+
+header .navbar .menu ul li a:hover {
+    background-color: tan;
+    border-radius: 10px 20px;
+}
+
+header .navbar .menu ul li a img {
+    width: 40px;
+    height: 40px;
+    margin-top: 0.5rem;
+}
+
+header .navbar .ads {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 1rem;
+}
+
+header .navbar .ads img {
+    height: auto;
+    max-width: 100%;
+    margin-bottom: 5px;
+}
+
+header .navbar .ads .ads-italy{
+  width: 187px;
+  height: 15px;
+  flex: 1;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+header .navbar .ads .ads-italy .green{
+  width: 32%;
+  height: 14px;
+  border-radius: 14px;
+  background-color: green;
+}
+header .navbar .ads .ads-italy .white{
+  width: 32%;
+  height: 14px;
+  border-radius: 14px;
+  background-color: rgb(243, 247, 243);
+}
+header .navbar .ads .ads-italy .red{
+  width: 32%;
+  height: 14px;
+  border-radius: 14px;
+  background-color: rgb(255, 0, 0);
+}
+.slide-shortcat {
+    width: 100%;
+    min-height: 60vh;
+    padding: 2rem 1rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2%;
+    justify-content: space-between;
+}
+
+.short_menu {
+    flex: 1;
+    min-width: 250px;
+    background-color: #111;
+    color: white;
+    padding: 1.5rem;
+    border-radius: 15px;
+}
+
+.short_menu .menu-title {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: #f3c56b;
+    text-align: center;
+}
+
+.morgh{
+  width: 100%;
+  height: 200px;
+}
+.morgh h2{
+  font-size: 1rem;
+  margin-bottom: 1rem;
+  color: #e93225;
+  text-align: center;
+}
+
+.menu-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+    gap: 1rem;
+}
+
+.menu-item {
+    background-color: #1f1f1f;
+    border-radius: 10px;
+    padding: 0.75rem;
+    text-align: center;
+    color: #eee;
+    text-decoration: none;
+    transition: 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.menu-item:hover {
+    background-color: #f3c56b;
+    color: #111;
+}
+
+.menu-item img {
+    width: 100%;
+    height: 60px;
+    margin-bottom: 0.5rem;
+    object-fit: contain;
+}
+.morgh{
+  width: 100%;
+  height: 200px;
+  margin-bottom: 100px;
+}
+.morgh h2{
+  font-size: 1rem;
+  margin-bottom: 1rem;
+  color: #e93225;
+  text-align: center;
+}
+.morgh img{
+
+  width: max-content;
+  height: 200px;
+
+}
+.menu-item span {
+    font-size: 0.95rem;
+    font-weight: bold;
+}
+
+.slider {
+    flex: 2;
+    min-width: 300px;
+    height: 60vh;
+    position: relative;
+    overflow: hidden;
+}
+
+.slider-item {
+    height: 100%;
+    position: relative;
+}
+
+.slider-item .item {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.slider-item .item.active {
+    opacity: 1;
+    z-index: 1;
+}
+
+.slider-item .item .img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    z-index: -1;
+}
+
+.slider-item .item .caption {
+    color: #fff;
+    text-align: center;
+    z-index: 2;
+    background: rgba(0, 0, 0, 0.4);
+    padding: 1rem 2rem;
+    border-radius: 15px;
+}
+
+.slider-item .item .caption h1 {
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.shortcat {
+    flex: 0.7;
+    min-width: 180px;
+    background: linear-gradient(180deg, #1e1e1e, #292929);
+    border-radius: 15px;
+    padding: 1.5rem 1rem;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.shortcat ul {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.shortcat ul li {
+    background-color: #383838;
+    padding: 0.75rem;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.4);
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.shortcat ul li:hover {
+    background-color: #f3c56b;
+    color: #111;
+    transform: translateY(-3px);
+}
+
+.shortcat .label {
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+@media (max-width: 992px) {
+    .short_menu {
+    flex: 3;
+    }
+
+    .slider {
+    height: 70vh;
+}
+.shortcat {
+    min-width: 400px;
+    margin: auto;
+    margin-top: 1rem;
+}
+}
+
+@media (max-width: 576px) {
+  
+header .navbar .menu {
+    display: none;
+}
+    .menu-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .short_menu {
+        margin-bottom: 10px;
+    }
+    .slide-shortcat {
+    width: 100%;
+    min-height: 60vh;
+    padding: 1rem 1rem;
+    }
+
+  .slider-item .item .caption h1 {
+    font-size: 1.25rem;
   }
 
-  slide();
-  setInterval(slide, duration);
-
-  // ===== MODALS =====
-  let currentModal = null;
-
-  function openModal(modalId) {
-    const modal = document.getElementById(modalId);
-    if (modal) {
-      modal.classList.add('show');
-      document.body.style.overflow = 'hidden';
-      currentModal = modal;
-      if (!history.state || !history.state.modalOpen) {
-        history.pushState({ modalOpen: true }, '');
-      }
-    }
+  .shortcat ul li {
+    font-size: 0.95rem;
+    padding: 0.75rem;
   }
-
-  function closeModal(modalId = null) {
-    const modal = modalId ? document.getElementById(modalId) : currentModal;
-    if (modal) {
-      modal.classList.remove('show');
-      document.body.style.overflow = 'auto';
-      currentModal = null;
-      if (history.state && history.state.modalOpen) history.back();
+}
+@media (max-width: 401px) {
+    .shortcat {
+        min-width: 320px;
+        margin: auto;
+        margin-top: 1rem;
     }
+}
+
+.menu-modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 9999;
+  justify-content: center;
+  align-items: center;
+  animation: fadeIn 0.3s ease;
+}
+
+.menu-modal.show {
+  display: flex;
+}
+.modal-content {
+  background: #1f1f1f;
+  border-radius: 15px;
+  padding: 2rem;
+  max-width: 1000px;
+  width: 95%;
+  color: #fff;
+  position: relative;
+  overflow-y: auto;
+  max-height: 90vh;
+  animation: goldShine 1.5s ease;
+}
+.close-modal {
+  position: absolute;
+  left: 15px;
+  top: 10px;
+  font-size: 2rem;
+  color: #f3c56b;
+  cursor: pointer;
+}
+
+.modal-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 1.5rem;
+  padding-top: 1rem;
+}
+
+.modal-image img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+.modal-info h2 {
+  font-size: 1.8rem;
+  color: #f3c56b;
+  margin-bottom: 1rem;
+}
+
+.modal-info p {
+  font-size: 1rem;
+  margin-bottom: 1rem;
+  line-height: 1.8;
+}
+
+.modal-info ul {
+  padding-right: 1rem;
+  line-height: 1.7;
+}
+
+@media (max-width: 768px) {
+  .modal-grid {
+    grid-template-columns: 3, 1fr;
   }
-
-  // ===== کلیک روی menu-item و fried-item =====
-  document.querySelectorAll('.menu-item, .fried-item').forEach(item => {
-    item.addEventListener('click', function (e) {
-      e.preventDefault();
-      const type = this.dataset.menu || this.dataset.fried;
-      if (type) openModal(`menu_${type}Modal`);
-    });
-  });
-
-  // ===== کلیک روی ضربدر =====
-  document.querySelectorAll('.close-modal').forEach(btn => {
-    btn.addEventListener('click', function () {
-      const modal = this.closest('.menu-modal');
-      if (modal) closeModal(modal.id);
-    });
-  });
-
-  // ===== کلیک خارج modal =====
-  window.addEventListener('click', (e) => {
-    if (currentModal && e.target === currentModal) closeModal();
-  });
-
-  // ===== دکمه Back =====
-  window.addEventListener('popstate', () => {
-    if (currentModal) closeModal();
-  });
-
-  // ===== CART =====
-  let cart = JSON.parse(localStorage.getItem("cart") || "{}") || {};
-
-  function updateFloatingCart() {
-    if (!cart) cart = {};
-    const cartItemsEl = document.getElementById("cart-items");
-    const cartTotalEl = document.getElementById("cart-total");
-    const cartCountEl = document.getElementById("cart-count");
-    const cartTotalPriceEl = document.getElementById("cart-total-price");
-
-    if (!cartItemsEl || !cartTotalEl || !cartCountEl) return;
-
-    cartItemsEl.innerHTML = "";
-    let total = 0;
-    let count = 0;
-
-    Object.keys(cart).forEach(key => {
-      const item = cart[key];
-      if (item && item.quantity > 0) {
-        total += item.quantity * item.price;
-        count += item.quantity;
-        const li = document.createElement("li");
-        li.innerHTML = `${item.name} (${item.size}) - ${item.price} x ${item.quantity} <span class="remove-item" data-id="${key}">✕</span>`;
-        cartItemsEl.appendChild(li);
-      }
-    });
-
-    cartTotalEl.textContent = `جمع کل: ${total} تومان`;
-    cartCountEl.textContent = count;
-    if (cartTotalPriceEl) cartTotalPriceEl.textContent = total;
-
-    // حذف آیتم
-    document.querySelectorAll("#cart-items .remove-item").forEach(btn => {
-      btn.addEventListener("click", () => {
-        const id = btn.dataset.id;
-        if(cart[id]) cart[id].quantity = 0;
-        localStorage.setItem("cart", JSON.stringify(cart));
-        updateFloatingCart();
-        updateCartButtons();
-      });
-    });
+}
+@media (max-width: 576px) {
+  .menu-modal .modal-grid{
+    grid-template-columns: repeat(2, 1fr);
   }
-
-  function updateCartButtons() {
-    document.querySelectorAll(".modal-grid .pizza-card").forEach(card => {
-      const plusBtn = card.querySelector(".btn-plus");
-      const minusBtn = card.querySelector(".btn-minus");
-      const quantityText = card.querySelector(".quantity");
-      const addText = card.querySelector(".add-text");
-      if (plusBtn && minusBtn && quantityText && addText) {
-        const nameEl = card.querySelector("h4");
-        const name = nameEl ? nameEl.textContent.trim() : "محصول بدون نام";
-        const priceList = card.querySelectorAll("ul.prices li");
-        const selectedPriceEl = priceList[0] || card.querySelector("p");
-        const idCard = name.replace(/\s+/g, "_").toLowerCase() + "_" +
-                       (selectedPriceEl ? selectedPriceEl.textContent.split(':')[0].trim() : "default").replace(/\s+/g, "_").toLowerCase() + "_" +
-                       (selectedPriceEl ? parseInt(selectedPriceEl.textContent.replace(/[^0-9]/g, '')) : 0);
-        quantityText.textContent = cart[idCard] ? cart[idCard].quantity : 0;
-        addText.textContent = cart[idCard] && cart[idCard].quantity > 0 ? "در سبد خرید" : "افزودن به سبد خرید";
-        addText.style.color = cart[idCard] && cart[idCard].quantity > 0 ? "#4caf50" : "#ccc";
-      }
-    });
+  .pizza-card h4 {
+    font-size: 15px;
   }
-
-  document.querySelectorAll(".modal-grid .pizza-card").forEach(card => {
-    const control = card.querySelector(".cart-controls");
-    if (!control) return;
-
-    const plusBtn = control.querySelector(".btn-plus");
-    const minusBtn = control.querySelector(".btn-minus");
-    const quantityText = control.querySelector(".quantity");
-    const addText = control.querySelector(".add-text");
-    if (!plusBtn || !minusBtn || !quantityText || !addText) return;
-
-    const nameEl = card.querySelector("h4");
-    const name = nameEl ? nameEl.textContent.trim() : "محصول بدون نام";
-
-    const priceList = card.querySelectorAll("ul.prices li");
-    let selectedPriceEl = priceList[0] || card.querySelector("p");
-    if (selectedPriceEl) selectedPriceEl.classList.add("active-price");
-
-    function getPrice(el) {
-      if (!el) return 0;
-      const text = el.textContent.trim();
-      const match = text.match(/[\d,]+/);
-      return match ? parseInt(match[0].replace(/,/g, '')) : 0;
-    }
-
-    function getSize(el) {
-      if (!el) return "default";
-      return el.dataset.size || el.textContent.split(':')[0].trim();
-    }
-
-    function getItemId() {
-      const size = getSize(selectedPriceEl);
-      const price = getPrice(selectedPriceEl);
-      return name.replace(/\s+/g, "_").toLowerCase() + "_" + size.replace(/\s+/g, "_").toLowerCase() + "_" + price;
-    }
-
-    function updateAddText() {
-      const id = getItemId();
-      if (!(id in cart)) cart[id] = { quantity: 0, name, price: getPrice(selectedPriceEl), size: getSize(selectedPriceEl) };
-      const quantity = cart[id].quantity;
-      quantityText.textContent = quantity;
-      addText.textContent = quantity > 0 ? "در سبد خرید" : "افزودن به سبد خرید";
-      addText.style.color = quantity > 0 ? "#4caf50" : "#ccc";
-      updateFloatingCart();
-    }
-
-    priceList.forEach(li => {
-      li.addEventListener("click", () => {
-        priceList.forEach(i => i.classList.remove("active-price"));
-        li.classList.add("active-price");
-        selectedPriceEl = li;
-        updateAddText();
-      });
-    });
-
-    plusBtn.addEventListener("click", (e) => {
-      e.stopPropagation();
-      const id = getItemId();
-      if (!(id in cart)) cart[id] = { quantity: 0, name, price: getPrice(selectedPriceEl), size: getSize(selectedPriceEl) };
-      cart[id].quantity++;
-      updateAddText();
-      localStorage.setItem("cart", JSON.stringify(cart));
-    });
-
-    minusBtn.addEventListener("click", (e) => {
-      e.stopPropagation();
-      const id = getItemId();
-      if (cart[id] && cart[id].quantity > 0) {
-        cart[id].quantity--;
-        updateAddText();
-        localStorage.setItem("cart", JSON.stringify(cart));
-      }
-    });
-
-    updateAddText();
-  });
-
-  // ===== نمایش سبد خرید =====
-  const cartToggle = document.getElementById("floating-cart-toggle");
-  const floatingCart = document.getElementById("floating-cart");
-  const checkoutBtn = document.getElementById("checkout-btn");
-  const closeCartBtn = document.getElementById("close-cart");
-
-  cartToggle.addEventListener("click", () => {
-    floatingCart.style.display = (floatingCart.style.display === "block") ? "none" : "block";
-  });
-
-  closeCartBtn.addEventListener("click", () => {
-    floatingCart.style.display = "none";
-  });
-
-  // ===== EmailJS =====
-  emailjs.init('cSJ_PDk6BcGLg0178');
-
- checkoutBtn.addEventListener("click", () => {
-  const cart = JSON.parse(localStorage.getItem("cart") || "{}");
-
-  // فقط آیتم‌هایی که quantity > 0 هستند
-  const filteredCart = Object.fromEntries(
-    Object.entries(cart).filter(([key, item]) => item.quantity > 0)
-  );
-
-  if (Object.keys(filteredCart).length === 0) {
-    alert("سبد خرید شما خالی است!");
-    return;
+  .pizza-card p {
+    font-size: 11px;
   }
+}
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
 
-  let phone = "";
-  const phoneRegex = /^09\d{9}$/; // شماره ایران: 11 رقم و با 09 شروع
+/* کارت پیتزا */
+.pizza-card {
+  background: #292929;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 0 15px rgba(243, 197, 107, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-align: center;
+  padding: 10px;
+}
 
-  // حلقه تا وقتی شماره معتبر وارد شود
-  while (!phoneRegex.test(phone)) {
-    phone = prompt("لطفاً شماره تماس خود را به صورت صحیح وارد کنید (مثال: 09123456789):");
-    if (phone === null) {
-      alert("ارسال سفارش لغو شد.");
-      return; // کاربر Cancel زده
-    }
-    if (!phoneRegex.test(phone)) alert("شماره وارد شده صحیح نیست، لطفاً دوباره وارد کنید.");
+.pizza-card:hover {
+  transform: scale(1.03);
+  box-shadow: 0 0 25px rgba(243, 197, 107, 0.5);
+}
+
+.pizza-card img {
+  width: 100%;
+  border-radius: 10px;
+  object-fit: cover;
+  height: 120px;
+  margin-bottom: 10px;
+}
+
+.pizza-card h4 {
+  color: #f3c56b;
+  font-size: 1rem;
+  margin-bottom: 0.3rem;
+}
+
+.pizza-card p {
+  font-size: 0.85rem;
+  color: #ccc;
+  line-height: 1.5;
+}
+
+/* انیمیشن طلایی هنگام باز شدن */
+@keyframes goldShine {
+  0% {
+    box-shadow: 0 0 0 rgba(243, 197, 107, 0);
   }
+  50% {
+    box-shadow: 0 0 40px rgba(243, 197, 107, 0.3);
+  }
+  100% {
+    box-shadow: 0 0 0 rgba(243, 197, 107, 0);
+  }
+}
 
-  // تبدیل به رشته خوانا برای ایمیل
-  const orderString = Object.values(filteredCart).map(item => {
-    return `${item.name}\nتعداد: ${item.quantity}\nسایز: ${item.size}\nقیمت: ${item.price}\n`;
-  }).join("\n");
+.fried-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 20px;
+  margin-top: 2rem;
+}
 
-  emailjs.send('service_ldi2akf', 'template_6y9qrhb', {
-    order_details: orderString,
-    total_price: Object.values(filteredCart).reduce((sum, item) => sum + (item.price * item.quantity), 0),
-    customer_phone: phone
-  })
-  .then(() => {
-    alert("سفارش شما ارسال شد!");
-    // پاک کردن مقادیر ارسال شده
-    Object.keys(filteredCart).forEach(key => cart[key].quantity = 0);
-    localStorage.setItem("cart", JSON.stringify(cart));
-    updateFloatingCart();
-    updateCartButtons();
-  })
-  .catch(err => console.error(err));
-});
+.fried-item {
+  background-color: #1f1f1f;
+  border-radius: 15px;
+  overflow: hidden;
+  text-align: center;
+  color: #f3c56b;
+  text-decoration: none;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+  transition: transform 0.3s ease, background 0.3s ease;
+  position: relative;
+}
 
+.fried-item img {
+  width: 100%;
+  height: 140px;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
 
-  updateFloatingCart();
-  updateCartButtons();
+.fried-item span {
+  display: block;
+  padding: 10px 0;
+  font-size: 1rem;
+  font-weight: 600;
+}
 
-  console.log("سبد خرید بارگذاری شد:", cart);
-});
+.fried-item:hover {
+  transform: translateY(-5px);
+  background-color: #f3c56b;
+  color: #111;
+}
+
+.fried-item:hover img {
+  transform: scale(1.05);
+}
+
+.cart-controls {
+  margin-top: 10px;
+  background: #222;
+  border-radius: 10px;
+  padding: 10px;
+  color: #fff;
+  text-align: center;
+}
+
+.cart-controls .add-text {
+  background-color: #11111152;
+  display: block;
+  font-size: 14px;
+  color: #ffffff;
+  margin-bottom: 8px;
+  border-radius: 30px;
+}
+
+.quantity-controls {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+}
+
+.quantity-controls button {
+  width: 30px;
+  height: 30px;
+  border: none;
+  border-radius: 6px;
+  background: #ff9800;
+  color: #fff;
+  font-size: 18px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.quantity-controls button:hover {
+  background: #ffa726;
+}
+
+.quantity {
+  min-width: 20px;
+  text-align: center;
+  font-weight: bold;
+  color: #fff;
+}
+
+ul.prices li {
+  cursor: pointer;
+  padding: 5px 10px;
+  margin: 3px 0;
+  border-radius: 5px;
+  transition: all 0.2s;
+}
+
+ul.prices li.active-price {
+  background-color: rgba(80, 80, 76, 0.596);
+  border-color: #f3c56b;
+  border: 1px 1px;
+  border-radius: 10px;
+  font-weight: bold;
+}
+
+.active-price {
+  background-color: #a5a285;
+  border-radius: 5px;
+  padding: 2px 5px;
+}
+
+#floating-cart-toggle {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: #ff9800;
+  color: #fff;
+  padding: 10px 15px;
+  border-radius: 30px;
+  cursor: pointer;
+  font-weight: bold;
+  z-index: 10000;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
+
+#floating-cart {
+  position: fixed;
+  bottom: 70px;
+  right: 20px;
+  width: 300px;
+  max-height: 400px;
+  overflow-y: auto;
+  background: #222;
+  color: #fff;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.5);
+  z-index: 9999;
+  display: none;
+  font-family: sans-serif;
+}
+
+#floating-cart h4 {
+  margin: 0 0 10px 0;
+  font-size: 16px;
+  text-align: center;
+}
+
+#floating-cart ul {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 10px 0;
+}
+
+#floating-cart li {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 5px;
+  padding: 3px 5px;
+  border-bottom: 1px solid #444;
+  border-radius: 5px;
+}
+
+#floating-cart li span.remove-item {
+  cursor: pointer;
+  color: #f44336;
+}
+
+#cart-total {
+  font-weight: bold;
+  text-align: center;
+  margin-top: 10px;
+}
+
+#checkout-btn {
+  width: 100%;
+  padding: 8px 0;
+  margin-top: 10px;
+  border: none;
+  background: #4caf50;
+  color: #fff;
+  font-weight: bold;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#close-cart {
+  position: absolute;
+  top: 5px;
+  right: 10px;
+  cursor: pointer;
+  font-size: 18px;
+  color: #f44336;
+}
